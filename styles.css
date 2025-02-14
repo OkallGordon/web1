@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #1a237e;
+    --accent-color: #00796b;
+    --accent-hover: #009688;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --secondary-bg: #f5f5f5;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --primary-color: #303f9f;
+    --accent-color: #00897b;
+    --accent-hover: #26a69a;
+    --text-color: #e0e0e0;
+    --bg-color: #121212;
+    --secondary-bg: #1e1e1e;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hero {
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.875rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-hover);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
