@@ -311,7 +311,7 @@
                 </div>
     
                 <!-- Contact Form -->
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/mjkgpnge" method="POST" id="contactForm">
                     <div class="form-group">
                         <input type="text" name="name" required placeholder="Your Name">
                     </div>
@@ -326,6 +326,20 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+                
+                <script>
+                    const form = document.getElementById('contactForm');
+                    
+                    form.addEventListener('submit', function(e) {
+                        // We don't prevent default because we want Formspree to handle the submission
+                        
+                        // Wait for the form to submit
+                        setTimeout(function() {
+                            // Reset the form
+                            form.reset();
+                        }, 1000);
+                    });
+                </script>
             </div>
         </div>
     </section>
