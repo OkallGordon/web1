@@ -50,6 +50,143 @@ body {
     padding: 0 2rem;
 }
 
+/* Add hamburger menu for mobile */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-content {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide by default on mobile */
+        position: fixed;
+        top: 60px; /* Height of navbar */
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Adjust hero section for mobile */
+    .hero {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Adjust grid layouts for mobile */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    /* Adjust section padding for mobile */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Adjust cards for mobile */
+    .skill-card, .project-card {
+        padding: 1.5rem;
+    }
+
+    /* Adjust tech tags for mobile */
+    .tech-tags {
+        gap: 0.25rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-content {
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .skill-card:hover, .project-card:hover {
+        transform: none;
+    }
+    
+    .nav-links a:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Add smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    .nav-links a, .cta-button, .theme-toggle {
+        padding: 0.75rem;
+        min-height: 44px; /* Minimum touch target size */
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Add loading animations for better perceived performance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-card, .project-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
